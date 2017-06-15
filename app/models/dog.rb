@@ -3,6 +3,15 @@ class Dog < ApplicationRecord
   belongs_to :vet
   has_many :custodies
   has_many :owners, through: :custodies
+  accepts_nested_attributes_for :custodies
+
+  def last_name
+    if custodies.empty?
+      "(none)"
+    else
+      custodies.first.owner.last_name
+    end
+  end
 end
 
 # == Schema Information

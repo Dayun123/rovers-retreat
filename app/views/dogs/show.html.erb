@@ -5,6 +5,15 @@
   <%= @dog.name %>
 </p>
 
+<h3>Owners:</h3>
+<p>
+  <ul>
+  <% @dog.owners.each do |owner| %>
+    <li><%= owner.name %></li>
+  <% end %>
+  </ul>
+</p>
+
 <p>
   <strong>Breed:</strong>
   <%= @dog.breed %>
@@ -29,6 +38,7 @@
   <strong>In daycare:</strong>
   <%= @dog.in_daycare %>
 </p>
+
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>

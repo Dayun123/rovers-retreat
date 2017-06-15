@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  root 'pages#index'
+
+  get 'pages/index'
+
+  get 'pages/about'
+
   resources :dogs
   resources :vets
   resources :owners
