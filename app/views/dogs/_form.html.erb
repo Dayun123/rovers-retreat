@@ -1,0 +1,23 @@
+<%= simple_form_for(@dog) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :breed %>
+    <%= f.input :dob %>
+    <%= f.input :weight %>
+    <%= f.association :vet %>
+    <%= f.input :in_daycare %>
+    <%= f.simple_fields_for(:custodies) do |custody_fields| %>
+      <%= custody_fields.association :owner, collection: Owner.order(:last_name, :first_name) %>
+      <%# Only show the destroy box if a record is already saved %>
+      <% if custody_fields.object.persisted? %>
+        <%= custody_fields.input :_destroy, as: :boolean %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
