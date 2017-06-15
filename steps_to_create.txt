@@ -1,0 +1,26 @@
+Create new app
+Commit
+Make gemfile branch
+  - Add gems
+    gem 'simple_form'
+    gem 'stamp'
+    gem 'awesome_print'
+    gem 'bootstrap-sass'
+    gem 'font-awesome-rails'
+    gem 'annotate'
+    gem 'pry-byebug'
+    gem 'pry-rails'
+    gem 'faker'
+Run yarn to get jquery in
+App->Assets->Javascripts->Application.js
+  - Require jquery and bootstrap-sproket
+App->Assets->Stylsheets->Application.css
+  - Change to .css.scss
+  - Import stylesheets
+    - Bootstrap Sprokets
+    - Bootstrap
+    - Font-awesome
+Setup annontate
+  - rails generate annotate:install
+Setup simple form
+  - rails generate simple_form:install --bootstrap
